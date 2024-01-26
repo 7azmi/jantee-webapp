@@ -13,6 +13,9 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.45.2/apexcharts.min.css" integrity="sha512-qc0GepkUB5ugt8LevOF/K2h2lLGIloDBcWX8yawu/5V8FXSxZLn3NVMZskeEyOhlc6RxKiEj6QpSrlAoL1D3TA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="stylesheet" href="css/style.scss">
 </head>
 
@@ -47,20 +50,49 @@
                   <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
                 </div>
 
-                <div class="box-info">
+                <style>
+                  .apexcharts-legend-series{
+                    display: flex !important;
+                  }
+                  .card-title{
+                    font-size: 13px;
+                  }
+                </style>
 
-                    <div class="box-info__item">
-                        <div class="box-info__item__title">Visual Presentaion</div>
-                        <div class="box-info__item__value">Sundy - 30 push ups</div>
-                        <div class="box-info__item__value">Monday - 60 push ups</div>
-                        <div class="box-info__item__value">Tuesday - 60 push ups</div>
-                        <div class="box-info__item__value">Wendsday - 60 push ups</div>
-                        <div class="box-info__item__value">Thursday - 60 push ups</div>
-                        <div class="box-info__item__value">Friday - 60 push ups</div>
-                        <div class="box-info__item__value">Satrday - 60 push ups</div>
+                <div class="col-lg-6 mt-5">
+                  <div class="card">
+                    <div class="card-body">
+                      <!-- <h5 class="card-title">Visual Presentaion</h5> -->
+        
+                      <!-- Polar Area Chart -->
+                      <div id="polarAreaChart"></div>
+        
+                      <script>
+                        document.addEventListener("DOMContentLoaded", () => {
+                          new ApexCharts(document.querySelector("#polarAreaChart"), {
+                            series: [40, 60, 80, 50, 64, 75, 99],
+                            chart: {
+                              type: 'polarArea',
+                              height: 350,
+                              toolbar: {
+                                show: true
+                              }
+                            },
+                            stroke: {
+                              colors: ['#fff']
+                            },
+                            fill: {
+                              opacity: 0.8
+                            },
+                            labels: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+                          }).render();
+                          });
+                      </script>
+        
                     </div>
-
+                  </div>
                 </div>
+                
               </div>
             </div>
   
@@ -71,6 +103,7 @@
 
     <script type="module" src="js/main.js" async defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.45.2/apexcharts.min.js" integrity="sha512-vIqZt7ReO939RQssENNbZ+Iu3j0CSsgk41nP3AYabLiIFajyebORlk7rKPjGddmO1FQkbuOb2EVK6rJkiHsmag==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 
 </html>
