@@ -54,45 +54,91 @@
                   .apexcharts-legend-series{
                     display: flex !important;
                   }
-                  .card-title{
-                    font-size: 13px;
-                  }
+                
                 </style>
 
-                <div class="col-lg-6 mt-5">
-                  <div class="card">
-                    <div class="card-body">
-                      <!-- <h5 class="card-title">Visual Presentaion</h5> -->
-        
-                      <!-- Polar Area Chart -->
-                      <div id="polarAreaChart"></div>
-        
-                      <script>
-                        document.addEventListener("DOMContentLoaded", () => {
-                          new ApexCharts(document.querySelector("#polarAreaChart"), {
-                            series: [40, 60, 80, 50, 64, 75, 99],
-                            chart: {
-                              type: 'polarArea',
-                              height: 350,
-                              toolbar: {
-                                show: true
-                              }
-                            },
-                            stroke: {
-                              colors: ['#fff']
-                            },
-                            fill: {
-                              opacity: 0.8
-                            },
-                            labels: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
-                          }).render();
-                          });
-                      </script>
-        
-                    </div>
-                  </div>
-                </div>
                 
+                
+              </div>
+            </div>
+
+            <div class="col-lg-6 mt-5">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Visual weekly Presentaion</h5>
+    
+                  <!-- Polar Area Chart -->
+                  <div id="polarAreaChart"></div>
+    
+                  <script>
+                    document.addEventListener("DOMContentLoaded", () => {
+                      new ApexCharts(document.querySelector("#polarAreaChart"), {
+                        series: [40, 60, 80, 50, 64, 75, 99],
+                        chart: {
+                          type: 'polarArea',
+                          height: 350,
+                          toolbar: {
+                            show: true
+                          }
+                        },
+                        stroke: {
+                          colors: ['#fff']
+                        },
+                        fill: {
+                          opacity: 0.8
+                        },
+                        labels: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+                      }).render();
+                      });
+                  </script>
+    
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Visual Monthly Presentaion</h5>
+    
+                  <!-- Line Chart -->
+                  <div id="lineChart"></div>
+    
+                  <script>
+                    document.addEventListener("DOMContentLoaded", () => {
+                      new ApexCharts(document.querySelector("#lineChart"), {
+                        series: [{
+                          name: "Desktops",
+                          data: [10, 41, 35, 51, 49, 62, 69, 91, 148]
+                        }],
+                        chart: {
+                          height: 350,
+                          type: 'line',
+                          zoom: {
+                            enabled: false
+                          }
+                        },
+                        dataLabels: {
+                          enabled: false
+                        },
+                        stroke: {
+                          curve: 'straight'
+                        },
+                        grid: {
+                          row: {
+                            colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
+                            opacity: 0.5
+                          },
+                        },
+                        xaxis: {
+                          categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+                        }
+                      }).render();
+                    });
+                  </script>
+                  <!-- End Line Chart -->
+    
+                </div>
               </div>
             </div>
   
